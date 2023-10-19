@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'axes',
     'import_export',
     'crispy_bootstrap4',
+    
 ]
 
 JAZZMIN_UI_TWEAKS = {
