@@ -183,7 +183,7 @@ def lockout(request, credentials, *args, **kwargs):
 
 def enviar_mail(**kwargs):
 
-    asunto="Restablecimiento Contraseña en Kaori Shop"
+    asunto="Restablecimiento Contraseña en music academy"
     mensaje = render_to_string("emails/reset_pass.html",{
 
         "nombreusuario": kwargs.get("nombreusuario")
