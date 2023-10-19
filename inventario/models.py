@@ -14,7 +14,7 @@ class articulos(models.Model):
     update = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name= 'articulo'
+        verbose_name= 'curso'
 
     def __str__(self):
         return self.nombre

@@ -84,9 +84,9 @@
 													{% for pedidos_comprados in pedidos_comprados %}
 														{% if pedidos_comprados.id == articulos_comprados.pedido_id %}
 															{% if pedidos_comprados.entregado is True %}
-																<h5>Cursando</h5>
+																<h5>Aprobado</h5>
 															{% else %}
-																<h5>Sin cursar</h5>
+																<h5>Sin aprobar</h5>
 															{% endif %}
 														{% endif %}
 													{% endfor %}

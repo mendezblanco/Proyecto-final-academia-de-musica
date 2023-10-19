@@ -90,7 +90,7 @@
 									<tr>
 										<th scope="col">No. asignacion</th>
 										<th scope="col">Curso</th>
-										<th scope="col">Cantidad</th>
+									<!--	<th scope="col">Cantidad</th> -->
 										<th scope="col">Fecha de compra</th>
 										<th scope="col">Estado</th>
 									</tr>
@@ -111,9 +111,9 @@
 														{% endif %}
 													{% endfor %}
 												</td>
-												<td>
+											<!--	<td>
 													<h5>{{articulos_comprados.cantidad}}</h5>
-												</td>
+												</td>-->
 												<td>
 													<h5>{{articulos_comprados.created_at.date}}</h5>
 												</td>
@@ -121,9 +121,9 @@
 													{% for pedidos_comprados in pedidos_comprados %}
 														{% if pedidos_comprados.id == articulos_comprados.pedido_id %}
 															{% if pedidos_comprados.entregado is True %}
-																<h5>Iniciado</h5>
+																<h5>Aprobado</h5>
 															{% else %}
-																<h5>Sin iniciar</h5>
+																<h5>Sin aprobar</h5>
 															{% endif %}
 														{% endif %}
 													{% endfor %}
