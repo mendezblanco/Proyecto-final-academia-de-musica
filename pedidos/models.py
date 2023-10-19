@@ -29,7 +29,7 @@ class Pedido(models.Model):
     class Meta:
         db_table = 'pedidos'
         verbose_name='pedido'
-        verbose_name_plural = 'pedidos'
+        verbose_name_plural = 'Aprobacion'
         ordering=['id']
 
 class LineaPedido(models.Model):

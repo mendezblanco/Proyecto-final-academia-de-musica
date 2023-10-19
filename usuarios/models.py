@@ -28,5 +28,5 @@ class usuarios (models.Model):
     class Meta:
         db_table = 'usuarios_info'
         verbose_name='Cliente'
-        verbose_name_plural = 'Clientes'
+        verbose_name_plural = 'Alumnos'
         ordering=['id']
