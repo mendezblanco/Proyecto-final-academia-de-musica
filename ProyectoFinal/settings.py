@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #My apps
+    'profesor',
     'stock',
     'inventario',
     'carro',
@@ -201,8 +202,9 @@ MESSAGE_TAGS = {
 
 }
 
-AXES_FAILURE_LIMIT = 5
+AXES_FAILURE_LIMIT = 10
 AXES_LOCKOUT_CALLABLE = "autenticacion.views.lockout"
 AXES_ONLY_USER_FAILURES	= True
+AUTH_USER_MODEL = 'auth.User'
 
-# AUTH_USER_MODEL='user.User'
+#AUTH_USER_MODEL='user.User'
