@@ -86,7 +86,7 @@ def procesar_pedido(request):
 
 def enviar_mail(pedido, lineas_pedido, nombreusuario, emailusuario, **kwargs):
 
-    asunto="Comprobante de pedido"
+    asunto="Comprobante de Asignación"
     mensaje = render_to_string("emails/pedido.html",{
 
         "pedido": pedido,

@@ -17,7 +17,7 @@ class pedidosresource(resources.ModelResource):
 class PedidosAdmin(ImportExportModelAdmin):
     resource_class = pedidosresource
     readonly_fields=('id', 'user','created_at','operacion')
-    fields=('id','user','created_at','operacion','entregado',)
+    fields=('id','user','created_at','operacion','aprobado',)
     list_display = ('id', 'user', 'created_at','entregado' ) #Propiedades visibles del campo
     list_display_links = ['id',] #brindar link a campo
     list_filter=['created_at']  #Añadir buscar por filtro
@@ -33,7 +33,7 @@ class LineapedidosAdmin(admin.ModelAdmin):
     list_display_links = ['id',] #brindar link a campo
     list_filter=['created_at']  #Añadir buscar por filtro
     search_fields = ['id', 'user'] #Permite buscar por
-    # list_editable=['entregado',]
+    # list_editable=['aprobado',]
     # list_per_page=15    #Cantidad de items por pagina
     # list_editable=['disponibilidad',]
 
