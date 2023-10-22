@@ -12,8 +12,8 @@ class Pedido(models.Model):
 
 #############################################################################
     user=models.ForeignKey(User, on_delete=models.CASCADE)
-    entregado = models.BooleanField(default=False)
-    operacion = models.CharField(max_length=50, null=False, default='compra')
+    entregado = models.BooleanField(default=False,verbose_name="Aprobado")
+    operacion = models.CharField(max_length=50, null=False, default='Asignacion')
     created_at = models.DateTimeField(auto_now_add=True)
 #############################################################################
 
@@ -37,10 +37,10 @@ class LineaPedido(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     producto = models.ForeignKey(articulos, on_delete=models.PROTECT)
     pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)
-    operacion = models.CharField(max_length=50, null=False, default='compra')
+    operacion = models.CharField(max_length=50, null=False, default='Asingacion')
     cantidad = models.IntegerField(default=1)
     created_at=models.DateTimeField(auto_now_add=True)
-    entregado = models.BooleanField(default=False)
+    entregado = models.BooleanField(default=False,verbose_name="Aprobado")
 
     def __str__(self):
         return f'{self.cantidad} unidades de {self.producto.nombre}'

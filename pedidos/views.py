@@ -97,7 +97,7 @@ def enviar_mail(pedido, lineas_pedido, nombreusuario, emailusuario, **kwargs):
 
 
     mensaje_texto=strip_tags(mensaje)
-    from_email="andrericardo763@gmail.com"         ########Correo desde el que se envia        
+    from_email="musicacademy997@gmail.com"         ########Correo desde el que se envia        
     to=emailusuario               ########Correo desde al que se envia
 
     send_mail(asunto, mensaje_texto, from_email, [to], html_message=mensaje)

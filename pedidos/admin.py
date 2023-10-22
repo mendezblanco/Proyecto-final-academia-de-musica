@@ -5,7 +5,6 @@ from django.contrib import admin
 from .models import Pedido, LineaPedido
 
 
-
 class pedidosresource(resources.ModelResource):
     fields =('id', 'operacion', 'user_id', 'created_at')
     
