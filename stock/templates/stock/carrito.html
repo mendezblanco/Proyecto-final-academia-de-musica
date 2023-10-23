@@ -8,11 +8,11 @@
 		<div class="container">
 			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
 				<div class="col-first">
-					<h1>Carrito</h1>
+					<h1 style="color: black;">Asignación</h1>
 					<nav class="d-flex align-items-center">
-						<a href="{% url 'Home' %}">Inicio<span class="lnr lnr-arrow-right"></span></a>
+						<a href="{% url 'Home' %}"style="color: black;">Inicio<span class="lnr lnr-arrow-right"></span></a>
 						<!--<a href="#">Shop<span class="lnr lnr-arrow-right"></span></a>-->
-						<a href="{% url 'Carrito' %}">Asignacion</a>
+						<a href="{% url 'Carrito' %}"style="color: black;">Asignacion</a>
 					</nav>
 				</div>
 			</div>
@@ -31,9 +31,8 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Curso</th>
-                                    <th scope="col">Precio unitario</th>
+                                    <th scope="col">Precio </th>
                                   <!--   <th scope="col">Cantidad</th>-->
-                                    <th scope="col">Subtotal</th>
                                 </tr>
                             </thead>
                             <tbody>                                
@@ -56,26 +55,11 @@
                                         <td>
                                             <h5>Q{{value.precio }}</h5>
                                         </td>
-                                         <td>
-                                            <div class="product_count">
-                                                <input type="text" name="qty" id="sst" maxlength="12" value="{{value.cantidad}}" title="Quantity:"
-                                                    class="input-text qty">
-                                                <form action="{%url 'carro:agregar' value.producto_id%}">
-                                                    <button type="submit" class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
-                                                </form>
-                                                
-                                                {% if value.cantidad > 1%}
-                                                    <form action="{%url 'carro:restar' value.producto_id%}">
-                                                        <button type="submit" class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
-                                                    </form>
-                                                {% else %}
-                                                    <button type="submit" class="reduced items-count" type="button" data-toggle="modal" data-target="#exampleModal"><i class="lnr lnr-chevron-down"></i></button>
-                                                {%endif%}
-                                                
-                                            </div>
-                                        </td>
+
                                         <td>
-                                            <h5>Q{{value.subtotal}}</h5>
+                                            <form action="{%url 'carro:restar' value.producto_id%}">
+                                                <input type="submit" action="{%url 'carro:restar' value.producto_id%}" value="Eliminar" class="gray_btn">
+                                            </form>
                                         </td>
                                     </tr>
                                     <!--================Fin Producto Individual =================-->
@@ -90,7 +74,7 @@
                                                 </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                ¿Ésta seguro de eliminar este producto de su carrito?
+                                                ¿Ésta seguro de eliminar este producto de su asignación?
                                                 </div>
                                                 <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Regresar</button>
@@ -115,31 +99,8 @@
                                 {% endif %}
 
 
-                                <tr class="bottom_button">
-                                    <td>
-                                        <a class="gray_btn" href="{% url 'Carrito' %}">Actualizar cursos</a>
-                                    </td>
-                                    <td>
-
-                                    </td>
-                                    <td>
-
-                                    </td>
-                                  <!--   <td>
-                                        <div class="cupon_text d-flex align-items-center" style="float: right;">
-                                            <input type="text" placeholder="Código de cupón">
-                                            <a class="primary-btn" href="#">Aplicar</a>
-                                            <a class="gray_btn" href="{% url 'Carrito' %}">Cancelar</a>
-                                        </div>
-                                    </td> -->
-                                </tr>
                                 <tr>
-                                    <td>
 
-                                    </td>
-                                    <td>
-
-                                    </td>
                                     <td>
                                         <h5>Total</h5>
                                     </td>
@@ -148,32 +109,13 @@
                                     </td>
                                 </tr>
                                 <tr class="shipping_area">
-                                    <td>
-
-                                    </td>
-                                    <td>
-
-                                    </td>
-                                    <td>
-                                        <h5>Envio</h5>
-                                    </td>
-                                    <td>
-                                        <div class="shipping_box">
-                                            <ul class="list">
-                                                <li class="active"><a>Gratis</a></li>
-                                            </ul>
-                                            
-                                        </div>
-                                    </td>
+                           
+                                 
                                 </tr>
                                 <tr class="out_button_area">
                                     <td>
 
-                                    </td>
-                                    <td>
-
-                                    </td>
-                                    <td>
+                             
 
                                     </td>
                                     <td>
