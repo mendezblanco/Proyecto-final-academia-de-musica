@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     #My apps
     'profesor',
     'stock',
-    'inventario',
+    'cursos',
+    #'inventario',
     'carro',
     'autenticacion',
     'pedidos',
@@ -128,7 +129,7 @@ WSGI_APPLICATION = 'ProyectoFinal.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Music_academy',
+        'NAME': 'academia',
         'USER': 'postgres',
         'PASSWORD': 'andre123',
         'HOST': '127.0.0.1',

@@ -14,7 +14,7 @@ from django.contrib.auth import get_user_model
 import itertools
 from pedidos.models import Pedido
 from pedidos.models import LineaPedido
-from inventario.models import articulos
+from cursos.models import articulos
 # from user.models import User
 from django.contrib.auth.models import User
 from usuarios.models import usuarios
