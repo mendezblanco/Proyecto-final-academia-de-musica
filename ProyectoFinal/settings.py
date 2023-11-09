@@ -15,6 +15,9 @@ import os
 
 from django.contrib.messages import constants as mensajes_de_error
 
+import ProyectoFinal.config as config
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -106,7 +109,7 @@ ROOT_URLCONF = 'ProyectoFinal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['D:\ウサク/2022/Segundo Semestre/Proyectos de computación/Proyecto/Proyecto Final/ProyectoFinal/Templates'],
+       'DIRS': [os.path.join(BASE_DIR, 'Templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,19 +126,23 @@ TEMPLATES = [
 WSGI_APPLICATION = 'ProyectoFinal.wsgi.application'
 
 
+
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+DATABASES = config.DATABASES
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'academia',
-        'USER': 'postgres',
-        'PASSWORD': 'andre123',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'postgres',
+#         'USER': 'postgres',
+#         'PASSWORD': '123456789aQ+',
+#         'HOST': 'academia.csmvs9rxjugb.us-east-2.rds.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
+
+
 
 
 # Password validation
@@ -209,7 +216,7 @@ MESSAGE_TAGS = {
 
 }
 
-AXES_FAILURE_LIMIT = 10
+AXES_FAILURE_LIMIT = 5
 AXES_LOCKOUT_CALLABLE = "autenticacion.views.lockout"
 AXES_ONLY_USER_FAILURES	= True
 AUTH_USER_MODEL = 'auth.User'
